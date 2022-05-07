@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import { Gig } from "../types/gig";
+import { Show } from "../classes/show";
 
-export const Card: NextPage<Gig> = ({ name, date }) => {
+export const Card: NextPage<Show> = ({ name, date }) => {
   return (
     <a
       href="https://nextjs.org/docs"
