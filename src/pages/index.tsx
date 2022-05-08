@@ -9,7 +9,7 @@ import { Events } from "../types/events";
 import { Year } from "../types/year";
 import { Month } from "../types/month";
 
-export function Home({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -64,5 +64,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-export default Home;
