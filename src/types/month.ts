@@ -1,4 +1,6 @@
-export enum Month {
+import { Show } from "../classes/show";
+
+export enum MonthName {
   "Janeiro",
   "Fevereiro",
   "Março",
@@ -11,4 +13,10 @@ export enum Month {
   "Outubro",
   "Novembro",
   "Dezembro",
+}
+
+export interface Month {
+  monthNumber: number;
+  name: MonthName;
+  shows: Show[];
 }

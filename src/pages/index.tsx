@@ -1,13 +1,15 @@
-import type { GetStaticPropsResult, NextPage } from "next";
+import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { Card } from "../components/card";
 import yaml from "yaml";
 import fs from "fs";
 import path from "path";
 import { Show } from "../classes/show";
+import { Events } from "../types/events";
+import { Year } from "../types/year";
+import { Month } from "../types/month";
 
-export const Home: NextPage<GetStaticPropsResult> = ({ shows }) => {
+export function Home({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -42,24 +44,25 @@ export const Home: NextPage<GetStaticPropsResult> = ({ shows }) => {
       </footer>
     </div>
   );
-};
+}
 
-export function getStaticProps(): GetStaticPropsResult<any> {
-  const result = yaml.parse(fs.readFileSync(path.join(process.cwd(), "src/gigs/shows.yaml"), "utf-8")) as any[];
+export const getStaticProps = async () => {
+  const events = yaml.parse(fs.readFileSync(path.join(process.cwd(), "/public/shows.yaml"), "utf-8")).events as Events;
 
-  const showList: any[] = [];
-  result.events.years.forEach(year => {
-    return year.months.forEach(month => {
-      return month.shows.forEach(show => {
-        showList.push(show);
+  const shows: Show[] = [];
+  events.years.forEach((year: Year): void => {
+    return year.months.forEach((month: Month): void => {
+      return month.shows.forEach((show: Show): void => {
+        shows.push(show);
       });
     });
   });
 
   return {
     props: {
-      shows: showList,
+      shows,
     },
   };
-}
+};
+
 export default Home;

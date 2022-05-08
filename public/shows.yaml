@@ -2,24 +2,24 @@ events:
   years:
     - year: 2021
       months:
-        - month: 1
+        - monthNumber: 1
           name: Janeiro
           shows:
             - name: UNDERSHOW
               date: 11-11-11
-        - month: 2
+        - monthNumber: 2
           name: Fevereiro
           shows:
             - name: Gorilla
               date: 11-11-11
     - year: 2022
       months:
-        - month: 1
+        - monthNumber: 1
           name: Janeiro
           shows:
             - name: Algum dia
               date: 11-11-11
-        - month: 2
+        - monthNumber: 2
           name: Fevereiro
           shows:
             - name: Vai ter
