@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Card } from "../components/card";
 import { Show } from "../classes/show";
 import getShows from "../utils/getShows";
+import { Footer } from "../components/footer";
 
 export default function Home({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -34,16 +35,7 @@ export default function Home({ shows }: InferGetStaticPropsType<typeof getStatic
         </div>
       </main>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://github.com/undershows/gigs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Colabore você também.
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
