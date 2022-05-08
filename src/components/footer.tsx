@@ -1,6 +1,6 @@
-import { NextPage } from "next";
+import { NextComponentType } from "next";
 
-export const Footer: NextPage = () => {
+export const Footer: NextComponentType = () => {
   return (
     <footer className="flex h-24 w-full items-center justify-center border-t">
       <a

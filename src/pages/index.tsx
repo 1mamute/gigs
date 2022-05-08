@@ -3,17 +3,18 @@ import Head from "next/head";
 import { Card } from "../components/card";
 import { Show } from "../classes/show";
 import getShows from "../utils/getShows";
-import { Footer } from "../components/footer";
+import Layout from "../components/layout";
+import { ReactElement } from "react";
 
 export default function Home({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <>
       <Head>
         <title>undershows</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+      <div className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
         <h1 className="font-newake text-6xl font-bold tracking-wider ">
           <span className="underline underline-offset-4 ">UNDER</span>
           <span className="bg-black bg-clip-padding pl-1 pt-2 pr-1 text-white">SHOWS</span>
@@ -33,10 +34,8 @@ export default function Home({ shows }: InferGetStaticPropsType<typeof getStatic
             ></Card>
           ))}
         </div>
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </>
   );
 }
 
@@ -46,4 +45,8 @@ export const getStaticProps: GetStaticProps = async () => {
       shows: await getShows(),
     },
   };
+};
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
 };
