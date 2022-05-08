@@ -19,8 +19,8 @@ export default function Home({ shows }: InferGetStaticPropsType<typeof getStatic
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
         <h1 className="font-newake text-6xl font-bold tracking-wider">
-          <span className="underline underline-offset-2 ">UNDER</span>
-          <span>SHOWS</span>
+          <span className="underline underline-offset-4 ">UNDER</span>
+          <span className="bg-black bg-clip-padding pl-1 pt-2 pr-1 text-white">SHOWS</span>
         </h1>
 
         <p className="mt-3 text-2xl">O underground respira.</p>
