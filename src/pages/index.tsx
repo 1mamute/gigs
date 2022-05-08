@@ -27,7 +27,14 @@ export default function Home({ shows }: InferGetStaticPropsType<typeof getStatic
 
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           {shows.map(show => (
-            <Card key={show.name} name={show.name} date={show.date}></Card>
+            <Card
+              key={show.name}
+              name={show.name}
+              date={show.date}
+              bands={show.bands}
+              schedule={show.schedule}
+              img={show.img}
+            ></Card>
           ))}
         </div>
       </main>
