@@ -5,6 +5,7 @@ import { Show } from "../../classes/show";
 import { DetailsCard } from "../../components/detailsCard";
 import Layout from "../../components/layout";
 import createShowUri from "../../utils/createShowUri";
+import getShow from "../../utils/getShow";
 import getShows from "../../utils/getShows";
 
 export default function Details({ show }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -41,9 +42,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // This also gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  if (!params) {
+    throw new Error(`errou`);
+  }
+
   return {
     props: {
-      show: params,
+      show: getShow(params.name as string),
     },
   };
 };
