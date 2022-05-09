@@ -38,3 +38,4 @@ jobs:
           clean: true # JamesIves/github-pages-deploy-action@v4.3.3
           clean-exclude: |
             .nojekyll
+            .gitignore
