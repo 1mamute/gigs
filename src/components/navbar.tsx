@@ -12,7 +12,7 @@ export default function Navbar({ hiddenByDefault }: NavbarProps) {
         <Link href="/">
           <a className="inline-flex items-center p-2 mr-4">
             <span className="mr-2 w-8 h-8 text-white fill-current">
-              <Logo textSize="text-3xl" />
+              <Logo textSize="text-3xl" invertColors={true} />
             </span>
           </a>
         </Link>
