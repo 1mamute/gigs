@@ -9,7 +9,7 @@ export const Card: NextPage<Show> = (show: Show) => {
   const convertedDate = parse(show.date, "dd/MM/yyyy", new Date());
   return (
     <Link href={`show/${createShowName(show)}`}>
-      <a className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600">
+      <a className="p-6 mt-6 w-96 text-left hover:text-blue-600 focus:text-blue-600 rounded-xl border">
         <h3 className="text-2xl font-bold">{show.name ? show.name : show.bands.join(", ")}</h3>
         <p className="mt-4 text-xl">
           Data: {format(convertedDate, "dd/MM/yyyy")} - Horário: {show.schedule}

@@ -1,15 +1,18 @@
 import { NextComponentType } from "next";
+import Logo from "./logo";
 
 export const Footer: NextComponentType = () => {
   return (
-    <footer className="flex h-24 w-full items-center justify-center border-t">
+    <footer className="flex justify-center items-center w-full h-24 border-t ">
       <a
-        className="flex items-center justify-center gap-2"
+        className="flex gap-2 justify-center items-center"
         href="https://github.com/undershows/gigs"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Colabore você também.
+        <p>
+          O <Logo textSize="text-l" /> é um projeto colaborativo. Colabore você também.
+        </p>
       </a>
     </footer>
   );

@@ -5,6 +5,7 @@ import { Show } from "../classes/show";
 import getShows from "../utils/getShows";
 import Layout from "../components/layout";
 import { ReactElement } from "react";
+import Logo from "../components/logo";
 
 export default function Home({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -14,15 +15,14 @@ export default function Home({ shows }: InferGetStaticPropsType<typeof getStatic
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="font-newake text-6xl font-bold tracking-wider ">
-          <span className="underline underline-offset-4 ">UNDER</span>
-          <span className="bg-black bg-clip-padding pl-1 pt-2 pr-1 text-white">SHOWS</span>
+      <div className="flex flex-col flex-1 justify-center items-center px-20 w-full text-center">
+        <h1>
+          <Logo />
         </h1>
 
         <p className="mt-3 text-2xl">O underground respira.</p>
 
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
+        <div className="flex flex-wrap justify-around items-center mt-6 max-w-4xl sm:w-full">
           {shows.map((show: Show) => (
             <Card
               key={show.name}
@@ -48,5 +48,5 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <Layout navbarProps={{ hiddenByDefault: true }}>{page}</Layout>;
 };

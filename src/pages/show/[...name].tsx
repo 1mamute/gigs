@@ -1,16 +1,18 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { ReactElement } from "react";
 import { Show } from "../../classes/show";
 import { DetailsCard } from "../../components/detailsCard";
+import Layout from "../../components/layout";
 import createShowName from "../../utils/createShowName";
 import getShows from "../../utils/getShows";
 
 export default function Details({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className="font-sans bg-cover leading-normal tracking-wider text-gray-900 antialiased">
+    <span className="antialiased tracking-wider leading-normal text-gray-900 bg-cover">
       {shows.map((show: Show) => (
         <DetailsCard show={show} key={createShowName(show)} />
       ))}
-    </div>
+    </span>
   );
 }
 
@@ -39,4 +41,8 @@ export const getStaticProps: GetStaticProps = async () => {
       shows: await getShows(),
     },
   };
+};
+
+Details.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
 };

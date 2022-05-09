@@ -1,18 +1,18 @@
-import { Navbar } from "./navbar";
+import Navbar, { NavbarProps } from "./navbar";
 import { Footer } from "./footer";
-import { ReactNode } from "react";
 
-type Props = {
-  children: ReactNode;
+type LayoutProps = {
+  children: React.ReactNode;
   title?: string;
+  navbarProps?: NavbarProps;
 };
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, navbarProps }: LayoutProps) {
   return (
     <>
-      <div className="flex max-h-screen flex-col">
-        <Navbar />
-        <div className="flex h-screen flex-col items-center justify-center align-middle">
+      <div className="flex flex-col max-h-screen">
+        <Navbar hiddenByDefault={navbarProps?.hiddenByDefault} />
+        <div className="flex flex-col justify-center items-center h-screen align-middle">
           <main>{children}</main>
         </div>
         <Footer />
