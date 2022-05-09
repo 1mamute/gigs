@@ -15,7 +15,7 @@ export default function Details({ show }: InferGetStaticPropsType<typeof getStat
         <title>undershows - {show.name} </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="antialiased tracking-wider leading-normal text-gray-900 bg-cover">
+      <div className="h-full antialiased tracking-wider leading-normal text-gray-900 bg-cover">
         <DetailsCard show={show} key={createShowUri(show)} />
       </div>
     </>
