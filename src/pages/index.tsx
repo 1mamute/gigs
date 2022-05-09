@@ -6,6 +6,7 @@ import getShows from "../utils/getShows";
 import Layout from "../components/layout";
 import { ReactElement } from "react";
 import Logo from "../components/logo";
+import createShowUri from "../utils/createShowUri";
 
 export default function Home({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -15,17 +16,17 @@ export default function Home({ shows }: InferGetStaticPropsType<typeof getStatic
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex flex-col flex-1 justify-center items-center px-20 w-full text-center">
+      <body className="flex flex-col justify-center content-center items-center px-20 w-full h-full">
         <h1>
           <Logo />
         </h1>
 
         <p className="mt-3 text-2xl">O underground respira.</p>
 
-        <div className="flex flex-wrap justify-around items-center mt-6 max-w-4xl sm:w-full">
+        <div className="flex flex-wrap justify-center self-center mt-6 w-full">
           {shows.map((show: Show) => (
             <Card
-              key={show.name}
+              key={createShowUri(show)}
               name={show.name}
               date={show.date}
               bands={show.bands}
@@ -34,7 +35,7 @@ export default function Home({ shows }: InferGetStaticPropsType<typeof getStatic
             ></Card>
           ))}
         </div>
-      </div>
+      </body>
     </>
   );
 }

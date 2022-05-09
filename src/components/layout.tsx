@@ -10,10 +10,10 @@ type LayoutProps = {
 export default function Layout({ children, navbarProps }: LayoutProps) {
   return (
     <>
-      <div className="flex flex-col max-h-screen">
+      <div className="flex flex-col h-screen min-h-screen">
         <Navbar hiddenByDefault={navbarProps?.hiddenByDefault} />
-        <div className="flex flex-col justify-center items-center h-screen align-middle">
-          <main>{children}</main>
+        <div className="flex-1 justify-center items-center align-middle">
+          <main className="w-full h-full">{children}</main>
         </div>
         <Footer />
       </div>
