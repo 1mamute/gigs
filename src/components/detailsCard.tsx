@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import { Show } from "../classes/show";
 import { parse } from "date-fns";
+import createShowName from "../utils/createShowName";
 
 export const DetailsCard: NextPage<{ show: Show }> = ({ show }) => {
   const convertedDate = parse(show.date, "dd/MM/yyyy", new Date());
@@ -13,7 +14,7 @@ export const DetailsCard: NextPage<{ show: Show }> = ({ show }) => {
       >
         <div className="p-4 text-center lg:p-12 lg:text-left">
           <div className="block mx-auto -mt-16 w-48 h-48 bg-center bg-cover rounded-full shadow-xl lg:hidden"></div>
-          <h1 className="pt-8 text-3xl font-bold lg:pt-0">{show.name ? show.name : show.bands.join(", ")}</h1>
+          <h1 className="pt-8 text-3xl font-bold lg:pt-0">{createShowName(show)}</h1>
           <div className="pt-3 mx-auto w-4/5 border-b-2 border-green-500 opacity-25 lg:mx-0"></div>
           <p className="flex justify-center items-center pt-4 text-xs text-gray-600 lg:justify-start lg:text-sm">
             <svg className="pr-4 h-4 text-black fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

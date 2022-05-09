@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { Show } from "../../classes/show";
 import { DetailsCard } from "../../components/detailsCard";
 import Layout from "../../components/layout";
+import createShowName from "../../utils/createShowName";
 import createShowUri from "../../utils/createShowUri";
 import getShow from "../../utils/getShow";
 import getShows from "../../utils/getShows";
@@ -12,7 +13,7 @@ export default function Details({ show }: InferGetStaticPropsType<typeof getStat
   return (
     <>
       <Head>
-        <title>undershows - {show.name} </title>
+        <title>undershows - {createShowName(show)} </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-full antialiased tracking-wider leading-normal text-gray-900 bg-cover">
@@ -24,7 +25,7 @@ export default function Details({ show }: InferGetStaticPropsType<typeof getStat
 
 // This function gets called at build time
 export const getStaticPaths: GetStaticPaths = async () => {
-  const shows = await getShows();
+  const shows: Show[] = await getShows();
 
   // Get the paths we want to pre-render based on posts
   const paths = shows.map(show => {
@@ -43,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // This also gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params) {
-    throw new Error(`errou`);
+    throw new Error(`A show was not found with the ParsedUrlQuery ${JSON.stringify(params)}`);
   }
 
   return {
