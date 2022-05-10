@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { ReactElement } from "react";
 import { Show } from "../../classes/show";
-import { DetailsCard } from "../../components/detailsCard";
+import DetailsCard from "../../components/detailsCard";
 import Layout from "../../components/layout";
 import createShowName from "../../utils/createShowName";
 import createShowUri from "../../utils/createShowUri";
