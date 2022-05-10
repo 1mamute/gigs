@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/1mamute/gigs/compare/v1.5.2...v1.6.0) (2022-05-10)
+
+
+### Features
+
+* adicionado regra de import no Eslint e lintado ([#18](https://github.com/1mamute/gigs/issues/18)) ([9676832](https://github.com/1mamute/gigs/commit/96768323dd31784640ed0392cf3bada7109971cb))
+
 ## [1.5.2](https://github.com/1mamute/gigs/compare/v1.5.1...v1.5.2) (2022-05-10)
 
 
