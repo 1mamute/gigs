@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/1mamute/gigs/compare/v1.4.8...v1.5.0) (2022-05-10)
+
+
+### Features
+
+* adicionado carousel, corrigido tags e importando fonte via styledJsx apenas no logo ([#15](https://github.com/1mamute/gigs/issues/15)) ([347c0c0](https://github.com/1mamute/gigs/commit/347c0c07484acb768ff646722248d2530dd88119))
+
 ## [1.4.8](https://github.com/1mamute/gigs/compare/v1.4.7...v1.4.8) (2022-05-10)
 
 
