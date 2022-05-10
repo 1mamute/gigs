@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/1mamute/gigs/compare/v1.5.1...v1.5.2) (2022-05-10)
+
+
+### Bug Fixes
+
+* melhoramentos do logo ([#17](https://github.com/1mamute/gigs/issues/17)) ([cafcd67](https://github.com/1mamute/gigs/commit/cafcd6758d177b9d285cdb2da911290b9316f9cb))
+
 ## [1.5.1](https://github.com/1mamute/gigs/compare/v1.5.0...v1.5.1) (2022-05-10)
 
 
