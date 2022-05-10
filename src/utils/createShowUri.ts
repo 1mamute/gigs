@@ -1,5 +1,6 @@
-import { Show } from "../classes/show";
 import deburr from "lodash.deburr";
+import { Show } from "../classes/show";
+
 export default function createShowUri(show: Show): string {
   if (!show.name) {
     return deburr(
