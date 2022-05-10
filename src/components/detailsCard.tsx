@@ -1,6 +1,6 @@
+import { parse } from "date-fns";
 import Image from "next/image";
 import { Show } from "../classes/show";
-import { parse } from "date-fns";
 import createShowName from "../utils/createShowName";
 import imageLoader from "../utils/loader";
 

@@ -1,4 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function imageLoader({ src }: any): string {
+type ImageLoaderProps = {
+  src: string;
+};
+
+export default function imageLoader({ src }: ImageLoaderProps): string {
   return src;
 }

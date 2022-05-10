@@ -1,13 +1,13 @@
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import HomeCard from "../components/homeCard";
-import { Show } from "../classes/show";
-import getShows from "../utils/getShows";
-import Layout from "../components/layout";
 import { ReactElement } from "react";
+import { Show } from "../classes/show";
+import HomeCarousel from "../components/carousel";
+import HomeCard from "../components/homeCard";
+import Layout from "../components/layout";
 import Logo from "../components/logo";
 import createShowUri from "../utils/createShowUri";
-import HomeCarousel from "../components/carousel";
+import getShows from "../utils/getShows";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 
 export default function Home({ shows }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (

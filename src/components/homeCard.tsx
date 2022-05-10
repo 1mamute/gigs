@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { Show } from "../classes/show";
 import { parse } from "date-fns";
+import Image from "next/image";
 import Link from "next/link";
+import { Show } from "../classes/show";
 import createShowUri from "../utils/createShowUri";
 import imageLoader from "../utils/loader";
 

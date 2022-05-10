@@ -1,28 +1,44 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "env": {
-    "node": true,
-    "browser": true
-  },
   "extends": [
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
     "plugin:tailwindcss/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
     "plugin:prettier/recommended"
   ],
   "plugins": [
-    "@typescript-eslint",
     "tailwindcss",
+    "@typescript-eslint",
     "prettier"
   ],
   "rules": {
     "prettier/prettier": [
       "error"
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "sibling"
+          ],
+          "object",
+          "type",
+          "index"
+        ],
+        "newlines-between": "never",
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
     ]
-  },
-  "settings": {
-    "next": {
-      "rootDir": "src/"
-    }
   }
 }

@@ -1,6 +1,7 @@
-import { Show } from "../classes/show";
-import upperfirst from "lodash.upperfirst";
 import { format, parse } from "date-fns";
+import upperfirst from "lodash.upperfirst";
+import { Show } from "../classes/show";
+
 export default function createShowName(show: Show): string {
   if (!show.name) {
     const showName = show.bands
