@@ -1,7 +1,6 @@
-import { NextComponentType } from "next";
 import Logo from "./logo";
 
-export const Footer: NextComponentType = () => {
+export default function Footer() {
   return (
     <footer className="flex justify-center items-center w-full h-24 border-t ">
       <a
@@ -20,4 +19,4 @@ export const Footer: NextComponentType = () => {
       </a>
     </footer>
   );
-};
+}

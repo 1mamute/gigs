@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-import { NextPage } from "next";
 import Image from "next/image";
 import { Show } from "../classes/show";
 import { parse } from "date-fns";
@@ -7,7 +5,11 @@ import Link from "next/link";
 import createShowUri from "../utils/createShowUri";
 import imageLoader from "../utils/loader";
 
-export const HomeCard: NextPage<Show> = (show: Show) => {
+type HomeCardProps = {
+  show: Show;
+};
+
+export default function HomeCard({ show }: HomeCardProps) {
   const convertedDate = parse(show.date, "dd/MM/yyyy", new Date());
   return (
     <div className="content-center w-full h-full">
@@ -26,4 +28,4 @@ export const HomeCard: NextPage<Show> = (show: Show) => {
       </Link>
     </div>
   );
-};
+}

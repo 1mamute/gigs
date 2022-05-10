@@ -1,6 +1,6 @@
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import { HomeCard } from "../components/homeCard";
+import HomeCard from "../components/homeCard";
 import { Show } from "../classes/show";
 import getShows from "../utils/getShows";
 import Layout from "../components/layout";
@@ -30,14 +30,7 @@ export default function Home({ shows }: InferGetStaticPropsType<typeof getStatic
         <div className="flex my-6 w-full h-full">
           <HomeCarousel
             slides={shows.map((show: Show) => (
-              <HomeCard
-                key={createShowUri(show)}
-                name={show.name}
-                date={show.date}
-                bands={show.bands}
-                schedule={show.schedule}
-                img={show.img}
-              ></HomeCard>
+              <HomeCard key={createShowUri(show)} show={show}></HomeCard>
             ))}
           />
         </div>

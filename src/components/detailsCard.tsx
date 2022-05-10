@@ -1,12 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
-import { NextPage } from "next";
 import Image from "next/image";
 import { Show } from "../classes/show";
 import { parse } from "date-fns";
 import createShowName from "../utils/createShowName";
 import imageLoader from "../utils/loader";
 
-export const DetailsCard: NextPage<{ show: Show }> = ({ show }) => {
+type DetailsCardProps = {
+  show: Show;
+};
+
+export default function DetailsCard({ show }: DetailsCardProps) {
   const convertedDate = parse(show.date, "dd/MM/yyyy", new Date());
   return (
     <div className="flex flex-col justify-center content-center items-center my-32 mx-auto h-full lg:flex-row lg:my-0 lg:mx-6">
@@ -131,4 +133,4 @@ export const DetailsCard: NextPage<{ show: Show }> = ({ show }) => {
       </div>
     </div>
   );
-};
+}
