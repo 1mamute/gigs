@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/1mamute/gigs/compare/v1.5.0...v1.5.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* convertido components para functions ([#16](https://github.com/1mamute/gigs/issues/16)) ([1519f30](https://github.com/1mamute/gigs/commit/1519f30f146be76f42572ce04aefa8c444baaff6))
+
 # [1.5.0](https://github.com/1mamute/gigs/compare/v1.4.8...v1.5.0) (2022-05-10)
 
 
