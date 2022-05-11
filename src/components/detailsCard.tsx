@@ -119,7 +119,7 @@ export default function DetailsCard({ show }: DetailsCardProps) {
           </div>
         </div>
       </div>
-      <div className="relative mx-6 mt-6 w-11/12 h-full lg:ml-2 lg:w-3/5 lg:max-w-2xl">
+      <div className="relative mx-6 w-11/12 h-full lg:ml-2 lg:w-3/5 lg:max-w-2xl">
         <Image
           src={`${
             process.env.NEXT_PUBLIC_BASE_PATH ? process.env.NEXT_PUBLIC_BASE_PATH : ""

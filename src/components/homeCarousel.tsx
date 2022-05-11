@@ -39,7 +39,7 @@ export default function HomeCarousel(props: CarouselProps) {
 
   return (
     <div className="flex mt-6 w-full h-full embla">
-      <div className="w-full h-full embla__viewport" ref={emblaRef}>
+      <div className="w-full h-full" ref={emblaRef}>
         <div className="w-full h-full embla__container">
           {props.slides.map((slide, index) => (
             <div className="flex-auto mx-4 w-full h-full embla__slide" key={index}>
@@ -47,11 +47,19 @@ export default function HomeCarousel(props: CarouselProps) {
             </div>
           ))}
         </div>
-        <button className="embla__button embla__button--next" onClick={scrollPrev} disabled={!prevBtnEnabled}>
-          <FontAwesomeIcon icon={faBackward} />
+        <button
+          className="left-6 w-24 h-24 disabled:opacity-30 disabled:cursor-default embla__button"
+          onClick={scrollPrev}
+          disabled={!prevBtnEnabled}
+        >
+          <FontAwesomeIcon icon={faBackward} className="w-full h-full text-2xl md:text-3xl lg:text-5xl" />
         </button>
-        <button className="embla__button embla__button--next" onClick={scrollNext} disabled={!nextBtnEnabled}>
-          <FontAwesomeIcon icon={faForward} />
+        <button
+          className="right-6 disabled:opacity-30 disabled:cursor-default embla__button"
+          onClick={scrollNext}
+          disabled={!nextBtnEnabled}
+        >
+          <FontAwesomeIcon icon={faForward} className="w-full h-full text-2xl md:text-3xl lg:text-5xl" />
         </button>
       </div>
     </div>
