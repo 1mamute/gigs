@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/1mamute/gigs/compare/v1.6.0...v1.7.0) (2022-05-11)
+
+
+### Features
+
+* improve carousel ([#19](https://github.com/1mamute/gigs/issues/19)) ([487a152](https://github.com/1mamute/gigs/commit/487a152c912f851cffbd3dfcb9897586c78567b3))
+
 # [1.6.0](https://github.com/1mamute/gigs/compare/v1.5.2...v1.6.0) (2022-05-10)
 
 
