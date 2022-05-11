@@ -2,7 +2,7 @@ import Logo from "./logo";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-center items-center w-full h-24 border-t ">
+    <footer className="flex justify-center items-center w-full h-24">
       <a
         className="flex gap-2 mx-4 text-center md:mx-0"
         href="https://github.com/undershows/gigs"

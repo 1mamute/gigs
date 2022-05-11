@@ -1,7 +1,10 @@
 import "../styles/globals.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import { NextPage } from "next";
 import { ReactElement, ReactNode } from "react";
 import type { AppProps } from "next/app";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
